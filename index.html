@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muhammad Adil Nisar | Video Editor & Virtual Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F1F3F9;--panel:#FFFFFF;--ink:#161A33;--muted:#555B7A;--line:#D6DAEA;--v:#5B4BFF;--a:#1FA67A;--play:#FF5A47;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12142A;--panel:#1B1E3A;--ink:#EEF0FA;--muted:#A3A9C9;--line:#2E3258;--v:#8E82FF;--a:#42D1A1;--play:#FF7A68}}
+:root[data-theme="dark"]{--bg:#12142A;--panel:#1B1E3A;--ink:#EEF0FA;--muted:#A3A9C9;--line:#2E3258;--v:#8E82FF;--a:#42D1A1;--play:#FF7A68}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "Instrument Sans",system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--v);outline-offset:3px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px;position:relative}
+.glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:0;left:0;top:0;background:radial-gradient(circle,var(--v) 0%,transparent 65%);opacity:.16;transform:translate(-50%,-50%);transition:left .25s,top .25s}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.35;z-index:0;animation:float 9s ease-in-out infinite alternate}
+.o1{width:260px;height:260px;background:var(--v);top:-40px;right:-60px}
+.o2{width:200px;height:200px;background:var(--play);top:260px;left:-80px;animation-delay:-4s}
+@keyframes float{to{transform:translate(30px,40px)}}
+header.top,main,footer,.contact{position:relative;z-index:1}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:12px;flex-wrap:wrap}
+.top b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
+.top nav{display:flex;gap:18px;font-size:15px}
+.top nav a{text-decoration:none;color:var(--muted)}
+.top nav a:hover{color:var(--ink)}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:6px 14px;border-radius:99px;background:var(--panel);border:1px solid var(--line)}
+.badge i{width:9px;height:9px;border-radius:50%;background:var(--a);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,166,122,.6)}100%{box-shadow:0 0 0 10px rgba(31,166,122,0)}}
+.hero{padding:34px 0 20px}
+h1{font-size:clamp(40px,8.5vw,80px);font-weight:800;letter-spacing:-.025em;max-width:13ch;margin-top:18px}
+h1 .sw{display:inline-block;color:var(--v);min-width:5ch;border-bottom:5px solid var(--play)}
+.hero p.sub{font-size:19px;max-width:52ch;color:var(--muted);margin:20px 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid var(--ink);transition:transform .15s,border-color .15s}
+.btn.p{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--v);transform:translateY(-2px)}
+.tl{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:34px 0 10px;position:relative;overflow:hidden}
+.ruler{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:0 0 10px 44px;border-bottom:1px solid var(--line);margin-bottom:10px}
+.tr{display:grid;grid-template-columns:36px 1fr;gap:8px;align-items:center;margin:6px 0}
+.tr>span{font-size:12px;font-weight:600;color:var(--muted)}
+.lane{display:flex;gap:4px;height:40px}
+.clip{border-radius:6px;padding:0 10px;display:flex;align-items:center;font-size:13px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.cv{background:var(--v)}.ca{background:var(--a);color:#06281D}.cg{background:var(--line);color:var(--muted)}
+.head{position:absolute;top:0;bottom:0;left:44px;width:2px;background:var(--play);animation:scrub 6s ease-in-out infinite alternate}
+.head::before{content:"";position:absolute;top:0;left:-6px;border:7px solid transparent;border-top:10px solid var(--play)}
+@keyframes scrub{from{left:44px}to{left:calc(100% - 20px)}}
+.marq{overflow:hidden;border-block:1px solid var(--line);margin:30px 0 0;padding:12px 0;background:var(--panel);position:relative;z-index:1}
+.marq div{display:flex;gap:40px;width:max-content;animation:mq 26s linear infinite;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:20px;color:var(--muted)}
+.marq span::after{content:"•";margin-left:40px;color:var(--play)}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:50px 0 6px}
+h2{font-size:clamp(28px,5vw,42px);font-weight:700;margin-bottom:8px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 24px}
+.reels{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.reel{position:relative;aspect-ratio:9/14;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;color:#fff;text-decoration:none;transition:transform .25s;border:1px solid var(--line)}
+.reel:hover{transform:translateY(-6px) rotate(-1deg)}
+.reel.r1{background:linear-gradient(160deg,#5B4BFF,#FF5A47)}
+.reel.r2{background:linear-gradient(160deg,#0F8F6C,#5B4BFF)}
+.reel.r3{background:linear-gradient(160deg,#FF5A47,#1B1E3A)}
+.reel::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 5px)}
+.reel .pl{position:absolute;top:50%;left:50%;width:64px;height:64px;margin:-44px 0 0 -32px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;transition:transform .2s}
+.reel:hover .pl{transform:scale(1.15)}
+.pl::after{content:"";border:11px solid transparent;border-left:18px solid #161A33;margin-left:6px}
+.reel h3{font-size:20px;position:relative}
+.reel small{position:relative;opacity:.9;font-size:13px}
+.ba{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.frame{position:relative;height:220px;border-radius:10px;overflow:hidden;background:linear-gradient(180deg,#7F9BB5 0%,#B9B2A4 45%,#6B6A62 100%)}
+.frame .sun{position:absolute;left:62%;top:26%;width:60px;height:60px;border-radius:50%;background:#E8D9B0}
+.frame .hill{position:absolute;bottom:0;left:-10%;width:120%;height:42%;background:#4B5248;border-radius:50% 50% 0 0}
+.frame .gr{position:absolute;inset:0;overflow:hidden;filter:saturate(1.7) contrast(1.25) hue-rotate(-12deg) brightness(1.05)}
+.gr-in{position:absolute;inset:0;background:linear-gradient(180deg,#7F9BB5 0%,#B9B2A4 45%,#6B6A62 100%)}
+.ba input{width:100%;margin-top:12px;accent-color:var(--v)}
+.ba .lb{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--muted);margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(91,75,255,.18)}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{margin:0;color:var(--muted)}
+.card.va{border-left:5px solid var(--a)}
+.card.wy{border-top:5px solid var(--v)}
+.about{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:760px){.about{grid-template-columns:1.4fr 1fr}}
+ul.clean{margin:0;padding:0;list-style:none}
+ul.clean li{padding:10px 0;border-bottom:1px solid var(--line)}
+ul.clean li:last-child{border:0}
+.contact{background:var(--ink);color:var(--bg);border-radius:16px;padding:38px 24px;margin:50px auto 30px;max-width:940px;overflow:hidden}
+.contact h2{margin-bottom:10px}
+.contact p{margin:0 0 20px;opacity:.85;max-width:50ch}
+.contact .btn{border-color:var(--bg);color:var(--bg)}
+.contact .btn.p{background:var(--bg);color:var(--ink)}
+footer{padding:0 0 90px;color:var(--muted);font-size:14px}
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:5;background:var(--play);color:#fff;font-weight:700;padding:13px 20px;border-radius:99px;text-decoration:none;box-shadow:0 8px 24px rgba(255,90,71,.45)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media (pointer:coarse){.glow{display:none}}
+@media (prefers-reduced-motion:reduce){.head,.orb,.marq div,.badge i{animation:none}.rv{opacity:1;transform:none;transition:none}.glow{display:none}}
+</style>
+</head>
+<body>
+<div class="glow" id="glow" aria-hidden="true"></div>
+<div class="wrap">
+<div class="orb o1" aria-hidden="true"></div><div class="orb o2" aria-hidden="true"></div>
+<header class="top">
+  <b>Adil Nisar</b>
+  <nav><a href="#reels">Reels</a><a href="#grade">Grading</a><a href="#va">Assistant</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main>
+<div class="hero">
+  <span class="badge"><i></i>Open for new projects</span>
+  <h1>I make your brand <span class="sw" id="sw">pop</span></h1>
+  <p class="sub">Video editor and virtual assistant for clothing brands, online stores and coaches. Scroll-stopping ads, a tidy store and a clear inbox.</p>
+  <div class="btns">
+    <a class="btn p" href="#contact">Hire me</a>
+    <a class="btn" href="#reels">Watch my edits</a>
+    <a class="btn" href="https://www.fiverr.com/s/DmmVWrV" target="_blank" rel="noopener">My Fiverr gig</a>
+  </div>
+  <div class="tl" role="img" aria-label="Video editing timeline">
+    <div class="ruler"><span>0:00</span><span>0:15</span><span>0:30</span></div>
+    <div class="tr"><span>V1</span><div class="lane"><div class="clip cv" style="flex:3">Hook</div><div class="clip cv" style="flex:4">Product shots</div><div class="clip cv" style="flex:3">Call to action</div></div></div>
+    <div class="tr"><span>A1</span><div class="lane"><div class="clip ca" style="flex:7">Music and voiceover</div><div class="clip ca" style="flex:3">Sound effects</div></div></div>
+    <div class="tr"><span>VA</span><div class="lane"><div class="clip cg" style="flex:3">Store updates</div><div class="clip cg" style="flex:4">Content posting</div><div class="clip cg" style="flex:3">Inbox and emails</div></div></div>
+    <div class="head" aria-hidden="true"></div>
+  </div>
+</div>
+</main>
+</div>
+
+<div class="marq" aria-hidden="true"><div>
+<span>Video editing</span><span>Product ads</span><span>Reels</span><span>Colour grading</span><span>Shopify management</span><span>Content creation</span><span>Email setup</span>
+<span>Video editing</span><span>Product ads</span><span>Reels</span><span>Colour grading</span><span>Shopify management</span><span>Content creation</span><span>Email setup</span>
+</div></div>
+
+<div class="wrap">
+<section id="reels" class="rv">
+  <h2>Edited videos</h2>
+  <p class="lead">Tap a card to watch the full video. More past work is in <a href="https://drive.google.com/drive/folders/1lqn5Ah6n5JYIoYBFPIpm2BWt1N7lenmS" target="_blank" rel="noopener">my video folder</a>.</p>
+  <div class="reels">
+    <a class="reel r1" href="https://drive.google.com/file/d/1Spy5OK7AK6PFcuT7_6QsxAnNm6EH6Lwy/view" target="_blank" rel="noopener"><span class="pl"></span><h3>Clothing brand ad</h3><small>Mood Up • Premiere Pro</small></a>
+    <a class="reel r2" href="https://drive.google.com/file/d/1vJYCjgnVlWBCAdEIx8lo8WnW78v0-SVp/view" target="_blank" rel="noopener"><span class="pl"></span><h3>Accessories ad</h3><small>Mood Up • Photoroom</small></a>
+    <a class="reel r3" href="https://drive.google.com/file/d/1I4c4FdVgl6Xwsc4w8YBqgp2OsrnioYZQ/view" target="_blank" rel="noopener"><span class="pl"></span><h3>Client ads</h3><small>Other client work</small></a>
+  </div>
+</section>
+
+<section id="grade" class="rv">
+  <h2>See what editing changes</h2>
+  <p class="lead">Drag the slider. Left is a flat raw frame, right is the same frame after colour grading.</p>
+  <div class="ba">
+    <div class="frame" id="frame">
+      <div class="sun"></div><div class="hill"></div>
+      <div class="gr" id="gr"><div class="gr-in"></div><div class="sun" style="background:#FFD98A"></div><div class="hill" style="background:#2E3A33"></div></div>
+    </div>
+    <input type="range" min="0" max="100" value="50" id="rng" aria-label="Before and after slider">
+    <div class="lb"><span>Raw</span><span>Graded</span></div>
+  </div>
+</section>
+
+<section id="va" class="rv">
+  <h2>Virtual assistant</h2>
+  <p class="lead">Reliable remote support so you can focus on your business.</p>
+  <div class="grid">
+    <div class="card va"><h3>Shopify store management</h3><p>Product uploads, listings and daily store upkeep.</p></div>
+    <div class="card va"><h3>Content creation</h3><p>Posts, captions and edited content in your brand voice.</p></div>
+    <div class="card va"><h3>Email and review setup</h3><p>Review request emails and integrations such as Klaviyo and Okendo.</p></div>
+    <div class="card va"><h3>Admin support</h3><p>Inbox tidying, scheduling and organised files.</p></div>
+  </div>
+</section>
+
+<section class="rv">
+  <h2>Why work with me</h2>
+  <div class="grid">
+    <div class="card wy"><h3>One person for video and store</h3><p>Edit the ad and upload the product in one place.</p></div>
+    <div class="card wy"><h3>Clear communication</h3><p>You get plain updates and know where your project stands.</p></div>
+    <div class="card wy"><h3>Remote and flexible</h3><p>I work online with brands and coaches, including an Australian client.</p></div>
+  </div>
+</section>
+
+<section class="rv">
+  <div class="about">
+    <div>
+      <h2>About me</h2>
+      <p class="lead">I'm Muhammad Adil Nisar from Shorkot Cantt, Pakistan. I study Computer Science at the University of Agriculture Faisalabad and work as a junior SOC analyst at Vertex Sec. Outside that, I edit videos and support small brands and coaches as a virtual assistant.</p>
+    </div>
+    <div class="card"><h3>Tools</h3><ul class="clean"><li>Adobe Premiere Pro</li><li>Photoroom</li><li>Shopify</li><li>Klaviyo and Okendo</li></ul></div>
+  </div>
+</section>
+</div>
+
+<div class="contact rv" id="contact">
+  <h2>Let's work together</h2>
+  <p>Tell me what you need edited or managed. I'll reply with a plan and a timeline.</p>
+  <div class="btns">
+    <a class="btn p" href="mailto:adilnisar1490@gmail.com">Email me</a>
+    <a class="btn" href="https://www.linkedin.com/in/muhammad-adil-nisar-b51647409" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://www.fiverr.com/s/DmmVWrV" target="_blank" rel="noopener">Order on Fiverr</a>
+  </div>
+</div>
+<div class="wrap"><footer>© Muhammad Adil Nisar</footer></div>
+<a class="fab" href="#contact">Hire me</a>
+
+<script>
+(function(){
+var rm=window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+var g=document.getElementById("glow");
+if(!rm){window.addEventListener("pointermove",function(e){g.style.left=e.clientX+"px";g.style.top=e.clientY+"px"});}
+var words=["pop","sell","move","stand out"],i=0,sw=document.getElementById("sw");
+if(!rm){setInterval(function(){i=(i+1)%words.length;sw.textContent=words[i]},2200);}
+var rng=document.getElementById("rng"),gr=document.getElementById("gr");
+function cut(){gr.style.clipPath="inset(0 0 0 "+rng.value+"%)"}
+rng.addEventListener("input",cut);cut();
+var els=document.querySelectorAll(".rv");
+if("IntersectionObserver" in window&&!rm){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add("in")})}
+})();
+</script>
+</body>
+</html>
